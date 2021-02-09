@@ -58,6 +58,7 @@ npx @api3/airnode-admin@0.1.5 derive-designated-wallet \
 ```
 
 This will return you a `designatedWalletAddress`.
+Fund it (with <1 xDAI if you are only testing).
 You will need to use this and the `requesterIndex` in your client contract to make requests.
 
 3. Endorse your client contract (the contract that will make the requests).
