@@ -1,0 +1,126 @@
+{
+  "ois": [
+    {
+      "oisFormat": "1.0.0",
+      "title": "CoinGecko-Omen-prototype",
+      "version": "1.0.0",
+      "apiSpecifications": {
+        "servers": [
+          {
+            "url": "https://api.coingecko.com/api/v3"
+          }
+        ],
+        "paths": {
+          "/coins/{id}/history": {
+            "get": {
+              "parameters": [
+                {
+                  "in": "path",
+                  "name": "id"
+                },
+                {
+                  "in": "query",
+                  "name": "date"
+                },
+                {
+                  "in": "query",
+                  "name": "localization"
+                }
+              ]
+            }
+          }
+        },
+        "components": {
+          "securitySchemes": {}
+        },
+        "security": {}
+      },
+      "endpoints": [
+        {
+          "name": "/coins/{id}/history",
+          "operation": {
+            "method": "get",
+            "path": "/coins/{id}/history"
+          },
+          "fixedOperationParameters": [
+            {
+              "operationParameter": {
+                "in": "query",
+                "name": "localization"
+              },
+              "value": "false"
+            }
+          ],
+          "reservedParameters": [
+            {
+              "name": "_type",
+              "fixed": "int256"
+            },
+            {
+              "name": "_path",
+              "fixed": "market_data.current_price.usd"
+            },
+            {
+              "name": "_times",
+              "fixed": "1000000"
+            }
+          ],
+          "parameters": [
+            {
+              "name": "id",
+              "operationParameter": {
+                "in": "path",
+                "name": "id"
+              }
+            },
+            {
+              "name": "date",
+              "operationParameter": {
+                "in": "query",
+                "name": "date"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "triggers": {
+    "request": [
+      {
+        "endpointId": "0xcfbb4287751a89c7132f36de279f07486f7270ac3abaa8be17413e27fc80a78d",
+        "oisTitle": "CoinGecko-Omen-prototype",
+        "endpointName": "/coins/{id}/history"
+      }
+    ]
+  },
+  "nodeSettings": {
+    "nodeVersion": "0.1.0",
+    "cloudProvider": "aws",
+    "region": "us-east-1",
+    "stage": "omen-prototype",
+    "logFormat": "json",
+    "chains": [
+      {
+        "id": "100",
+        "type": "evm",
+        "providers": [
+          {
+            "name": "xdaichain",
+            "url": "https://rpc.xdaichain.com/"
+          },
+          {
+            "name": "poanetwork",
+            "url": "https://xdai.poanetwork.dev"
+          }
+        ],
+        "contracts": {
+          "Airnode": "0x32D228B5d44Fd18FefBfd68BfE5A5F3f75C873AE",
+          "Convenience": "0xd029Ec5D9184Ecd8E853dC9642bdC1E0766266A1"
+        },
+        "providerAdminForRecordCreation": "0x1Da10cDEc44538E1854791b8e71FA4Ef05b4b238"
+      }
+    ]
+  },
+  "id": "981d57c2-a004-4526-99da-1b04608fb463"
+}
