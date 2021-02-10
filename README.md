@@ -58,7 +58,7 @@ npx @api3/airnode-admin@0.1.5 derive-designated-wallet \
 ```
 
 This will return you a `designatedWalletAddress`.
-Fund it (with <1 xDAI if you are only testing).
+Fund it (with <=1 xDAI if you are only testing).
 You will need to use this and the `requesterIndex` in your client contract to make requests.
 
 3. Endorse your client contract (the contract that will make the requests).
@@ -74,6 +74,8 @@ npx @api3/airnode-admin endorse-client \
 ```
 
 Now the requests that the client contract makes will be fulfilled.
+You only need to repeat step 3 if you want to redeploy your client contract.
+All the client contracts you have endorsed with a single requester index will share the same designated wallet.
 
 ## Full setup
 
